@@ -1,4 +1,6 @@
-# 1. Metafields
+# Merchant Setup Instructions
+
+## 1. Metafields
 
 ### Add Required Product meta fields:
 + (Go to "Settings" down the bottom left, click on "Metafields and metaobjects" in the lower left)
@@ -50,7 +52,7 @@
 ```
 
 
-# 2. Products
+## 2. Products
 ### Add a new product:
 + call it "Aluminium plate test".
 + Set it's status to "Unlisted" (top right)
@@ -79,7 +81,7 @@
   + Save each time.
 
 
-# 3. UI Template
+## 3. UI Template
 ### Add a template including the app ui
 + On the left, under "Sales channels", click on "Online Store" (don't click the eye)
 + This should open the Themes page, Under current theme, click "Edit theme"
@@ -92,14 +94,14 @@
 + Hide the default "Buy buttons" at the bottom of the "Product information" section under "Template", as the default 'buy' behavior isn't being used.
 + Click save up the top right.
 
-# 4. Validation
+## 4. Validation
 ### Verify everything has worked.
 + As the new sheet material should be unlisted, go back to "Products", find "Aluminium Plate test" and click the "eye" at the far right of the row.
 + This should open the product page along with the new material price calculation app ui.
 + Save the URL and share it stake holders for testing.
 
 
-# 5. Finally
+## 5. Finally
 ### Customize and add more products as needed.
 Once you are comfortable, you can add more products with different metafield values, for example, different cut surcharges or markup percentages.
 
