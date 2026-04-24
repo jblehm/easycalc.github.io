@@ -6,7 +6,66 @@
     <meta name="shopify-api-key" content="8e4aeedeb91b3e433a2392e394d7ccf9" />
     <script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
     <script type="text/javascript">
-        // shopify.toast.show("App Bridge is working!");
+        (function () {
+            "use strict";
+
+            function showAuthWarning(message) {
+                document.addEventListener("DOMContentLoaded", function () {
+                    var notice = document.createElement("div");
+                    notice.textContent = message;
+                    notice.style.background = "#fff3cd";
+                    notice.style.border = "1px solid #ffe69c";
+                    notice.style.padding = "0.75rem";
+                    notice.style.marginBottom = "1rem";
+                    notice.style.maxWidth = "70ch";
+                    notice.style.borderRadius = "4px";
+                    document.body.insertBefore(notice, document.body.firstChild);
+                });
+            }
+
+            async function getSessionToken() {
+                if (!window.shopify || typeof window.shopify.idToken !== "function") {
+                    throw new Error("Shopify App Bridge did not initialize. Confirm this page is loaded in Shopify Admin as an embedded app.");
+                }
+
+                // Request a fresh JWT for each API call (tokens are short-lived).
+                return window.shopify.idToken();
+            }
+
+            async function authenticatedFetch(input, init) {
+                var token = await getSessionToken();
+                var requestInit = init || {};
+                var headers = new Headers(requestInit.headers || {});
+
+                headers.set("Authorization", "Bearer " + token);
+
+                if (!requestInit.credentials) {
+                    requestInit.credentials = "include";
+                }
+
+                var response = await fetch(input, Object.assign({}, requestInit, { headers: headers }));
+
+                if (response.status === 401 || response.status === 403) {
+                    console.error("Authenticated request was rejected. Verify your backend is validating Shopify session tokens.");
+                }
+
+                return response;
+            }
+
+            window.easycalcAuth = {
+                getSessionToken: getSessionToken,
+                authenticatedFetch: authenticatedFetch
+            };
+
+            getSessionToken()
+                .then(function () {
+                    console.info("Shopify session token auth is ready.");
+                })
+                .catch(function (error) {
+                    console.error(error);
+                    showAuthWarning("Shopify session token auth is unavailable. Open this page from Shopify Admin and confirm App Bridge configuration.");
+                });
+        })();
     </script>
     <link rel="preconnect" href="https://rsms.me/">
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
