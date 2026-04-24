@@ -18,86 +18,91 @@
 
 <h3>Add Required Product meta fields:</h3>
 <ul>
-<li>(Go to "Settings" down the bottom left, click on "Metafields and metaobjects" in the lower left)</li>
-<li>Click on "Products" metafields</li>
-<li>Add the following 6 Product Metafield Definitions, saving after each one:</li>
+    <li>(Go to "Settings" down the bottom left, click on "Metafields and metaobjects" in the lower
+        left)
+    </li>
+    <li>Click on "Products" metafields</li>
+    <li>Add the following 6 Product Metafield Definitions, saving after each one:</li>
 </ul>
 
-<div>
+<div style="white-space: pre-line; padding-left: 5rem; padding-bottom: 1rem;">
     Name: Min cut sheet size
     Type: Integer
     Description: Minimum cut length and width in mm for sheet/plate materials.
 </div>
 
-<p>
-<span style="margin: 0 0 0 5rem;">Name: Min cut sheet size</span>
-<span style="margin: 0 0 0 5rem;">Type: Integer</span>
-<span style="margin: 0 0 0 5rem;">Description: Minimum cut length and width in mm for sheet/plate materials.</span>
-</p>
-
-<p>
-<span style="margin: 0 0 0 5rem;">Name: Max cut sheet size</span>
-<span style="margin: 0 0 0 5rem;">Type: Integer</span>
-<span style="margin: 0 0 0 5rem;">Description: Maximum cut length and width in mm for sheet/plate materials.</span>
-</p>
-<p>
-<span style="margin: 0 0 0 5rem;">Name: Weight Rounding To Nearest Grams Value</span>
-<span style="margin: 0 0 0 5rem;">Type: Weight</span>
-<span style="margin: 0 0 0 5rem;">Description: Nearest weight to round material weights to, eg: 500g.</span>
-</p>
-<p>
-<span style="margin: 0 0 0 5rem;">: Cut Allowance (cm)</span>
-<span style="margin: 0 0 0 5rem;">Type: Decimal</span>
-<span style="margin: 0 0 0 5rem;">Description: Additional cut allowance added to sheet dimensions for pricing.</span>
-</p>
-<p>
-<span style="margin: 0 0 0 5rem;">Name: Price per kg</span>
-<span style="margin: 0 0 0 5rem;">Type: Money</span>
-<span style="margin: 0 0 0 5rem;">Description: Material price per kilogram that the customer should be charged.</span>
-</p>
-<p>
-<span style="margin: 0 0 0 5rem;">Name: Material Density (g/cm³)</span>
-<span style="margin: 0 0 0 5rem;">Type: Decimal</span>
-<span style="margin: 0 0 0 5rem;">Description: Material Density for use in sheet/plate material weight calculation. In grams per cubic centimeter.</span>
-</p>
+<div style="white-space: pre-line; padding-left: 5rem; padding-bottom: 1rem;">
+    Name: Max cut sheet size
+    Type: Integer
+    Description: Maximum cut length and width in mm for sheet/plate materials.
+</div>
+<div style="white-space: pre-line; padding-left: 5rem; padding-bottom: 1rem;">
+    Name: Weight Rounding To Nearest Grams Value
+    Type: Weight
+    Description: Nearest weight to round material weights to, eg: 500g.
+</div>
+<div style="white-space: pre-line; padding-left: 5rem; padding-bottom: 1rem;">
+    : Cut Allowance (cm)
+    Type: Decimal
+    Description: Additional cut allowance added to sheet dimensions for pricing.
+</div>
+<div style="white-space: pre-line; padding-left: 5rem; padding-bottom: 1rem;">
+    Name: Price per kg
+    Type: Money
+    Description: Material price per kilogram that the customer should be charged.
+</div>
+<div style="white-space: pre-line; padding-left: 5rem; padding-bottom: 1rem;">
+    Name: Material Density (g/cm³)
+    Type: Decimal
+    Description: Material Density for use in sheet/plate material weight calculation. In grams per
+    cubic centimeter.
+</div>
 
 <h3>Add required variant meta fields:</h3>
 <ul>
-<li>Go back to the "Metafields and metaobjects" page (not the "Products metafield definitions" page)</li>
-<li>In the "Metafield definition" menu, click "Variants"</li>
-<li>Add the following 2 Variant Metafield Definitions, saving after each one:</li>
+    <li>Go back to the "Metafields and metaobjects" page (not the "Products metafield definitions"
+        page)
+    </li>
+    <li>In the "Metafield definition" menu, click "Variants"</li>
+    <li>Add the following 2 Variant Metafield Definitions, saving after each one:</li>
 </ul>
-<p>
-<span style="margin: 0 0 0 5rem;">Name: Variant Markup Percentage</span>
-<span style="margin: 0 0 0 5rem;">Type: Decimal</span>
-<span style="margin: 0 0 0 5rem;">Description: The markup added to the total sheet stock price as a percentage.</span>
-</p>
-<p>
-<span style="margin: 0 0 0 5rem;">Name: Cut Surcharge</span>
-<span style="margin: 0 0 0 5rem;">Type: Money</span>
-<span style="margin: 0 0 0 5rem;">Description: The per line item cut surcharge for sheet/plate metal stock.</span>
-</p>
+
+<div style="white-space: pre-line; padding-left: 5rem; padding-bottom: 1rem;">
+    Name: Variant Markup Percentage
+    Type: Decimal
+    Description: The markup added to the total sheet stock price as a percentage.
+</div>
+<div style="white-space: pre-line; padding-left: 5rem; padding-bottom: 1rem;">
+    Name: Cut Surcharge
+    Type: Money
+    Description: The per line item cut surcharge for sheet/plate metal stock.
+</div>
 
 
 <h2>2. Products</h2>
 <h3>Add a new product:</h3>
 <ul>
-<li>call it "Aluminium plate test".</li>
-<li>Set it's status to "Unlisted" (top right)</li>
-<li>Set it's "Type" to "Sheet Stock" (center right)</li>
-<li>Add a variant option to "Variants", call it "Thickness"</li>
-<li>Add at-least 2 variants, the variants must be named by material thickness, Eg: 5mm and 7.5mm</li>
-<li>The variant price does not matter as it will be calculated at time of purchase,</li>
-<li>but can be displayed as "priced from $x" to the customer, so for now you can set it to $1.</li>
-<li>Down the bottom of the page, there should be a "Product metafields" section, add the following:</li>
-<li>min cut sheet size: 50</li>
-<li>max cut sheet size: 1000</li>
-<li>weight rounding to nearest grams value: 500</li>
-<li>cut allowance (cm): 2.0</li>
-<li>price per kg: 12.00</li>
-<li>material density (g/cm³): 2.7</li>
-<li>Click save</li>
-<li>Update each of the variants, click on each in turn and add the following:</li>
+    <li>call it "Aluminium plate test".</li>
+    <li>Set it's status to "Unlisted" (top right)</li>
+    <li>Set it's "Type" to "Sheet Stock" (center right)</li>
+    <li>Add a variant option to "Variants", call it "Thickness"</li>
+    <li>Add at-least 2 variants, the variants must be named by material thickness, Eg: 5mm and
+        7.5mm
+    </li>
+    <li>The variant price does not matter as it will be calculated at time of purchase,</li>
+    <li>but can be displayed as "priced from $x" to the customer, so for now you can set it to $1.
+    </li>
+    <li>Down the bottom of the page, there should be a "Product metafields" section, add the
+        following:
+    </li>
+    <li>min cut sheet size: 50</li>
+    <li>max cut sheet size: 1000</li>
+    <li>weight rounding to nearest grams value: 500</li>
+    <li>cut allowance (cm): 2.0</li>
+    <li>price per kg: 12.00</li>
+    <li>material density (g/cm³): 2.7</li>
+    <li>Click save</li>
+    <li>Update each of the variants, click on each in turn and add the following:</li>
 
     <li>
         <ul>
@@ -107,41 +112,56 @@
     </li>
 </ul>
 
-<p>
-    <span style="margin: 0 0 0 5rem;">Variant Markup Percentage: 3.0</span>
-    <span style="margin: 0 0 0 5rem;">Cut Surcharge: 10</span>
-</p>
-    <ul>
-<li>Save each time.</li>
+<div style="white-space: pre-line; padding-left: 5rem; padding-bottom: 1rem;">
+    Variant Markup Percentage: 3.0
+    Cut Surcharge: 10
+</div>
+<ul>
+    <li>Save each time.</li>
 </ul>
 
 
 <h2>3. UI Template</h2>
 <h3>Add a template including the app ui</h3>
 <ul>
-<li>On the left, under "Sales channels", click on "Online Store" (don't click the eye)</li>
-<li>This should open the Themes page, Under current theme, click "Edit theme"</li>
-<li>This should open an example homepage, up the center top, there should be a drop down that currently displays the text "Home Page"</li>
-<li>Open the "Home page" drop down, mouse over and click "Products", you will need to create a new template called "Sheet Stock".</li>
-<li>While creating the "Sheet Stock" template, on the left, under "Template", expand the "Product information" (if necessary) and click "Add block"</li>
-<li>In the blocks menu, there should be an option called "Apps", click on it to open.</li>
-<li>Under "Apps" in the blocks menu, there should be the "Material Calculator" or "easycalc" app, click it.</li>
-<li>Once it's added, it should appear on the page and on the "Product information" tab of the "Template" section on the left, drag it just below title.</li>
-<li>Hide the default "Buy buttons" at the bottom of the "Product information" section under "Template", as the default 'buy' behavior isn't being used.</li>
-<li>Click save up the top right.</li>
+    <li>On the left, under "Sales channels", click on "Online Store" (don't click the eye)</li>
+    <li>This should open the Themes page, Under current theme, click "Edit theme"</li>
+    <li>This should open an example homepage, up the center top, there should be a drop down that
+        currently displays the text "Home Page"
+    </li>
+    <li>Open the "Home page" drop down, mouse over and click "Products", you will need to create a
+        new template called "Sheet Stock".
+    </li>
+    <li>While creating the "Sheet Stock" template, on the left, under "Template", expand the
+        "Product information" (if necessary) and click "Add block"
+    </li>
+    <li>In the blocks menu, there should be an option called "Apps", click on it to open.</li>
+    <li>Under "Apps" in the blocks menu, there should be the "Material Calculator" or "easycalc"
+        app, click it.
+    </li>
+    <li>Once it's added, it should appear on the page and on the "Product information" tab of the
+        "Template" section on the left, drag it just below title.
+    </li>
+    <li>Hide the default "Buy buttons" at the bottom of the "Product information" section under
+        "Template", as the default 'buy' behavior isn't being used.
+    </li>
+    <li>Click save up the top right.</li>
 </ul>
 
 <h2>4. Validation</h2>
 <h3>Verify everything has worked.</h3>
 <ul>
-<li>As the new sheet material should be unlisted, go back to "Products", find "Aluminium Plate test" and click the "eye" at the far right of the row.</li>
-<li>This should open the product page along with the new material price calculation app ui.</li>
-<li>Save the URL and share it stake-holders for testing.</li>
+    <li>As the new sheet material should be unlisted, go back to "Products", find "Aluminium Plate
+        test" and click the "eye" at the far right of the row.
+    </li>
+    <li>This should open the product page along with the new material price calculation app ui.</li>
+    <li>Save the URL and share it stake-holders for testing.</li>
 </ul>
 
 <h2>5. Finally</h2>
 <h3>Customize and add more products as needed.</h3>
-Once you are comfortable, you can add more products with different metafield values, for example, different cut surcharges or markup percentages.
+Once you are comfortable, you can add more products with different metafield values, for example,
+different cut surcharges or markup percentages.
 </body>
 
 </html>
