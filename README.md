@@ -36,6 +36,7 @@
     Type: Decimal
     Description: Material Density for use in sheet/plate material weight calculation. In grams per cubic centimeter.
 ```
+
 ### Add required variant meta fields:
 + Go back to the "Metafields and metaobjects" page (not the "Products metafield definitions" page)
 + In the "Metafield definition" menu, click "Variants"
