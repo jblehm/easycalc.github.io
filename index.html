@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- PUBLIC APP API ID-->
-    <meta name="shopify-api-key" content="8e4aeedeb91b3e433a2392e394d7ccf9" />
+    <meta name="shopify-api-key" content="8e4aeedeb91b3e433a2392e394d7ccf9"/>
     <script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
     <script type="text/javascript">
         (function () {
@@ -43,7 +43,7 @@
                     requestInit.credentials = "include";
                 }
 
-                var response = await fetch(input, Object.assign({}, requestInit, { headers: headers }));
+                var response = await fetch(input, Object.assign({}, requestInit, {headers: headers}));
 
                 if (response.status === 401 || response.status === 403) {
                     console.error("Authenticated request was rejected. Verify your backend is validating Shopify session tokens.");
@@ -96,73 +96,70 @@
 <h3>Run Shopify GraphQL queries to activate cart transform permissions for your store:</h3>
 <ul style="margin-bottom: 0;">
     <li>In the text area that currently has "mutation" text (top left of the app interface area),
-        enter the following (replacing all text that is currently there):</li>
+        enter the following (replacing all text that is currently there):
+    </li>
 </ul>
 
-    <div style="white-space: pre-line; padding-left: 6rem;">
-        <pre>
-query {
-    shopifyFunctions(first: 10) {
-        nodes {
-            id
-            title
-            apiType
+<div style="white-space: pre-line; padding-left: 6rem;">
+    <pre>
+        query {
+            shopifyFunctions(first: 10) {
+                nodes {
+                    id
+                    title
+                    apiType
+                }
+            }
         }
-    }
-}
-            </pre>
-    </div>
+    </pre>
+</div>
 
-
-
-<img src="images/shopify_doc_1.jpg">
-
-
-
+<img style="max-width: stretch;" src="images/shopify_doc_1.jpg">
 
 <ul style="margin-bottom: 0;">
     <li>Run this query using the pink "Play" button in the center top of the app page.</li>
-    <li>in the results on the right, note the "id" of the shopify function with the name "easycalc-cart-transform", it should look something like this:</li>
+    <li>in the results on the right, note the "id" of the shopify function with the name
+        "easycalc-cart-transform", it should look something like this:
+    </li>
 </ul>
 
 <div style="white-space: pre-line; padding-left: 6rem;">
-        <pre>
-{
-  "id": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5", <-- copy this id
-  "title": "easycalc-cart-transform",
-  "apiType": "cart_transform"
-}
-            </pre>
+    <pre>
+        {
+          "id": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5", <-- copy this id
+          "title": "easycalc-cart-transform",
+          "apiType": "cart_transform"
+        }
+    </pre>
 </div>
-
 
 <ul style="margin-bottom: 0;">
-    <li>In the text area that currently has the query text you just entered (top left of the app interface area),
-        enter the following (Replace "FUNCTION-ID-GOES-HERE" with the id you copied from the last step, including quotation marks)
-        (replacing all previous text from the last step):</li>
+    <li>In the text area that currently has the query text you just entered (top left of the app
+        interface area),
+        enter the following (Replace "FUNCTION-ID-GOES-HERE" with the id you copied from the last
+        step, including quotation marks)
+        (replacing all previous text from the last step):
+    </li>
 </ul>
 
-
-<img src="images/shopify_doc_2.jpg">
-
 <div style="white-space: pre-line; padding-left: 6rem;">
-        <pre>
-mutation {
-  cartTransformCreate(functionId: "FUNCTION-ID-GOES-HERE") {
-    cartTransform {
-      id
-      functionId
-    }
-    userErrors {
-      field
-      message
-    }
-  }
-}
-            </pre>
+    <pre>
+        mutation {
+          cartTransformCreate(functionId: "FUNCTION-ID-GOES-HERE") {
+            cartTransform {
+              id
+              functionId
+            }
+            userErrors {
+              field
+              message
+            }
+          }
+        }
+    </pre>
 </div>
 
-
+<img style="max-width: stretch;" src="images/shopify_doc_2.jpg">
 
 <ul style="margin-bottom: 0;">
     <li>Again, run this query using the pink "Play" button in the center top of the app page.</li>
@@ -170,49 +167,21 @@ mutation {
 </ul>
 
 
-
 <div style="white-space: pre-line; padding-left: 6rem;">
-        <pre>
-{
-  "data": {
-    "cartTransformCreate": {
-      "cartTransform": {
-        "id": "gid://shopify/CartTransform/105906477",
-        "functionId": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5"
-      },
-      "userErrors": []
-    }
-  },
-  ....
-            </pre>
+    <pre>
+        {
+          "data": {
+            "cartTransformCreate": {
+              "cartTransform": {
+                "id": "gid://shopify/CartTransform/105906477",
+                "functionId": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5"
+              },
+              "userErrors": []
+            }
+          },
+          ....
+    </pre>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <h2>2. Metafields</h2>
