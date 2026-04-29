@@ -83,7 +83,8 @@
 
 <h3>Install the Shopify GraphiQL App:</h3>
 <ul style="margin-bottom: 0;">
-    <li>Go to <a href="https://shopify-graphiql-app.shopifycloud.com/login">https://shopify-graphiql-app.shopifycloud.com/login</a></li>
+    <li>Go to <a href="https://shopify-graphiql-app.shopifycloud.com/login">https://shopify-graphiql-app.shopifycloud.com/login</a>
+    </li>
     <li>In the "Shop URL" field, enter "makersuppliesau"</li>
     <li>Make sure every "Scope" check box is unchecked. (you may need to scroll down)</li>
     <li>Check only "cart_transforms" read and write (near the top left).</li>
@@ -121,7 +122,7 @@
 </ul>
 
 <div style="white-space: pre-line; padding-left: 6rem;">
-    <pre>
+    <pre style="user-select: none; opacity: 0.75;">
         {
           "id": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5", <-- copy this id
           "title": "easycalc-cart-transform",
@@ -164,7 +165,7 @@
 </ul>
 
 <div style="white-space: pre-line; padding-left: 6rem;">
-    <pre>
+    <pre style="user-select: none; opacity: 0.75;">
         {
           "data": {
             "cartTransformCreate": {
@@ -180,7 +181,6 @@
 </div>
 
 <img style="max-width: stretch;" src="images/shopify_doc_2.jpg">
-
 
 
 <h2>2. Metafields</h2>
@@ -248,7 +248,6 @@
 </div>
 
 
-
 <h2>3. Products</h2>
 <h3>Add a new product:</h3>
 <ul style="margin-bottom: 0;">
@@ -291,7 +290,6 @@
 </ul>
 
 
-
 <h2>4. UI Template</h2>
 <h3>Add a template including the app ui</h3>
 <ul>
@@ -320,7 +318,6 @@
 </ul>
 
 
-
 <h2>5. Validation</h2>
 <h3>Verify everything has worked.</h3>
 <ul>
@@ -330,7 +327,6 @@
     <li>This should open the product page along with the new material price calculation app ui.</li>
     <li>Save the URL and share it stake-holders for testing.</li>
 </ul>
-
 
 
 <h2>6. Finally</h2>
@@ -349,7 +345,9 @@ different cut surcharges or markup percentages.
 
 <h3>Open The Shopify GraphiQL App:</h3>
 <ul style="margin-bottom: 0;">
-    <li>In the Shopify GraphiQL App text area (top left of the app interface area), enter the following (replacing all existing text):</li>
+    <li>In the Shopify GraphiQL App text area (top left of the app interface area), enter the
+        following (replacing all existing text):
+    </li>
 </ul>
 
 <div style="white-space: pre-line; padding-left: 6rem;">
@@ -374,7 +372,7 @@ different cut surcharges or markup percentages.
 </ul>
 
 <div style="white-space: pre-line; padding-left: 6rem;">
-    <pre>
+    <pre style="user-select: none; opacity: 0.75;">
         {
           "id": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5", <-- copy this id
           "title": "easycalc-cart-transform",
@@ -384,10 +382,9 @@ different cut surcharges or markup percentages.
 </div>
 
 
-
-
 <ul style="margin-bottom: 0;">
-    <li>Now, in the text area that currently has the query text you just entered (top left of the app interface area),
+    <li>Now, in the text area that currently has the query text you just entered (top left of the
+        app interface area),
         enter the following (replacing all existing text):
     </li>
 </ul>
@@ -414,7 +411,7 @@ different cut surcharges or markup percentages.
 
 
 <div style="white-space: pre-line; padding-left: 6rem;">
-    <pre>
+    <pre style="user-select: none; opacity: 0.75;">
         {
           "data": {
             "cartTransforms": {
@@ -431,8 +428,16 @@ different cut surcharges or markup percentages.
 </div>
 
 <ul style="margin-bottom: 0;">
-    <li>Find the cartTransform matching the "app ID" from before, for example: an "app ID" or "functionId" of ""019db8e4-5594-7c1e-8d2d-07d0da1b76b5" may have a matching cart transform ID of "gid://shopify/CartTransform/105906477" (include the quotation marks and the full string of text).</li>
-    <li>Now, in the text area that currently has the query text you just entered (top left of the app interface area), enter the following (Replace "ID-GOES-HERE" with the "app ID" you copied from the last step, including quotation marks, replacing all previous text from the last step):</li>
+    <li>Find the cartTransform matching the "app ID" from before, for example: an "app ID" or
+        "functionId" of ""019db8e4-5594-7c1e-8d2d-07d0da1b76b5" may have a matching cart transform
+        ID of "gid://shopify/CartTransform/105906477" (include the quotation marks and the full
+        string of text).
+    </li>
+    <li>Now, in the text area that currently has the query text you just entered (top left of the
+        app interface area), enter the following (Replace "ID-GOES-HERE" with the "app ID" you
+        copied from the last step, including quotation marks, replacing all previous text from the
+        last step):
+    </li>
 </ul>
 
 <div style="white-space: pre-line; padding-left: 6rem;">
@@ -455,7 +460,7 @@ different cut surcharges or markup percentages.
 </ul>
 
 <div style="white-space: pre-line; padding-left: 6rem;">
-    <pre>
+    <pre style="user-select: none; opacity: 0.75;">
         {
           "data": {
             "cartTransformDelete": {
