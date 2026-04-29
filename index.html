@@ -81,17 +81,21 @@
 
 <h2>1. CartTransform Activation
     <br>
-    <span style="font-size: small; font-weight: 500;">This step is required to give the calculation app access to the cart for price calculation.</span>
+    <span style="font-size: small; font-weight: 500; padding: 0.5rem; line-height: 1.5rem;">This step is required to give the calculation app access to the cart for price calculation.</span>
 </h2>
 
 <h3>Install the Shopify GraphiQL App:</h3>
 <ul style="margin-bottom: 0;">
-    <li>Go to <a href="https://shopify-graphiql-app.shopifycloud.com" target="_blank" rel="noopener noreferrer">https://shopify-graphiql-app.shopifycloud.com/login</a>.</li>
+    <li>Go to <a href="https://shopify-graphiql-app.shopifycloud.com" target="_blank"
+                 rel="noopener noreferrer">https://shopify-graphiql-app.shopifycloud.com/login</a>.
+    </li>
     <li>In the "Shop URL" field, enter "makersuppliesau"</li>
     <li>Make sure every "Scope" check box is unchecked (you may need to scroll down).</li>
     <li>Now Check only "cart_transforms" read and write (near the top left).</li>
     <li>Click "Install" (near the top).</li>
-    <li>You should be automatically redirected you to your store, to confirm data access - click "Install".</li>
+    <li>You should be automatically redirected you to your store, to confirm data access - click
+        "Install".
+    </li>
     <li>You should be automatically redirected to the Shopify GraphiQL App interface.</li>
 </ul>
 
@@ -131,7 +135,8 @@ query {
 }</pre>
 </div>
 
-<img style="max-width: stretch; max-height: 20rem; padding: 0.5rem 2rem;" src="images/shopify_doc_1.jpg" alt="shopify_doc_1">
+<img style="max-width: stretch; max-height: 20rem; padding: 0.5rem 2rem;"
+     src="images/shopify_doc_1.jpg" alt="shopify_doc_1">
 
 <ul style="margin-bottom: 0;">
     <li>In the text area that currently has the query text you just entered (top left of the app
@@ -178,11 +183,14 @@ mutation {
 ....</pre>
 </div>
 
-<img style="max-width: stretch; max-height: 20rem; padding: 0.5rem 2rem;" src="images/shopify_doc_2.jpg" alt="shopify_doc_2">
+<img style="max-width: stretch; max-height: 20rem; padding: 0.5rem 2rem;"
+     src="images/shopify_doc_2.jpg" alt="shopify_doc_2">
 
 
-<h2>2. Metafields</h2>
-This step creates metafields that allow the merchant to configure various calculation parameters.
+<h2>2. Metafields
+    <br>
+    <span style="font-size: small; font-weight: 500; padding: 0.5rem; line-height: 1.5rem;">This step creates metafields that allow the merchant to configure various calculation parameters.</span>
+</h2>
 
 <h3>Add Required Product meta fields:</h3>
 <ul style="margin-bottom: 0;">
@@ -247,8 +255,11 @@ This step creates metafields that allow the merchant to configure various calcul
 </div>
 
 
-<h2>3. Products</h2>
-This step demonstrates how to create products with necessary fields for price calculation.
+<h2>3. Products
+    <br>
+    <span style="font-size: small; font-weight: 500; padding: 0.5rem; line-height: 1.5rem;">This step demonstrates how to create products with necessary fields for price calculation.</span>
+</h2>
+
 <h3>Add a new product:</h3>
 <ul style="margin-bottom: 0;">
     <li>call it "Aluminium plate test".</li>
@@ -288,8 +299,11 @@ This step demonstrates how to create products with necessary fields for price ca
 </ul>
 
 
-<h2>4. UI Template</h2>
-This step demonstrates how to set up the customer UI template for product price calculation.
+<h2>4. UI Template
+    <br>
+    <span style="font-size: small; font-weight: 500; padding: 0.5rem; line-height: 1.5rem;">This step demonstrates how to set up the customer UI template for product price calculation.</span>
+</h2>
+
 <h3>Add a template including the app ui</h3>
 <ul>
     <li>On the left, under "Sales channels", click on "Online Store" (don't click the eye)</li>
@@ -336,7 +350,9 @@ different cut surcharges or markup percentages.
 <br>
 <br>
 <br>
-<a href="uninstallation.html" style="font-size: larger; font-weight: 600; color: black; opacity: 0.75;">Uninstallation Instructions</a>
+<a href="uninstallation.html"
+   style="font-size: larger; font-weight: 600; color: black; opacity: 0.75;">Uninstallation
+    Instructions</a>
 <br>
 <br>
 <br>
