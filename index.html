@@ -102,20 +102,33 @@
     <div style="white-space: pre-line; padding-left: 6rem;">
         <pre>
         query {
-        shopifyFunctions(first: 10) {
-        nodes {
-        id
-        title
-        apiType
-        }
-        }
+            shopifyFunctions(first: 10) {
+                nodes {
+                    id
+                    title
+                    apiType
+                }
+            }
         }
             </pre>
     </div>
 
 
+<ul style="margin-bottom: 0;">
+    <li>Run this query using the pink "Play" button in the center top of the app page.</li>
+    <li>in the results on the right, note the "id" of the shopify function with the name "easycalc-cart-transform"</li>
+    <li>it should look something like this:</li>
+</ul>
 
-
+<div style="white-space: pre-line; padding-left: 6rem;">
+        <pre>
+        {
+          "id": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5", <-- copy this id
+          "title": "easycalc-cart-transform",
+          "apiType": "cart_transform"
+        }
+            </pre>
+</div>
 
 
 
