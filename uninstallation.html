@@ -1,0 +1,209 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- PUBLIC APP API ID-->
+    <meta name="shopify-api-key" content="8e4aeedeb91b3e433a2392e394d7ccf9"/>
+    <script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
+    <script type="text/javascript">
+        (function () {
+            "use strict";
+
+            function showAuthWarning(message) {
+                document.addEventListener("DOMContentLoaded", function () {
+                    var notice = document.createElement("div");
+                    notice.textContent = message;
+                    notice.style.background = "#fff3cd";
+                    notice.style.border = "1px solid #ffe69c";
+                    notice.style.padding = "0.75rem";
+                    notice.style.marginBottom = "1rem";
+                    notice.style.maxWidth = "70ch";
+                    notice.style.borderRadius = "4px";
+                    document.body.insertBefore(notice, document.body.firstChild);
+                });
+            }
+
+            async function getSessionToken() {
+                if (!window.shopify || typeof window.shopify.idToken !== "function") {
+                    throw new Error("Shopify App Bridge did not initialize. Confirm this page is loaded in Shopify Admin as an embedded app.");
+                }
+
+                // Request a fresh JWT for each API call (tokens are short-lived).
+                return window.shopify.idToken();
+            }
+
+            async function authenticatedFetch(input, init) {
+                var token = await getSessionToken();
+                var requestInit = init || {};
+                var headers = new Headers(requestInit.headers || {});
+
+                headers.set("Authorization", "Bearer " + token);
+
+                if (!requestInit.credentials) {
+                    requestInit.credentials = "include";
+                }
+
+                var response = await fetch(input, Object.assign({}, requestInit, {headers: headers}));
+
+                if (response.status === 401 || response.status === 403) {
+                    console.error("Authenticated request was rejected. Verify your backend is validating Shopify session tokens.");
+                }
+
+                return response;
+            }
+
+            window.easycalcAuth = {
+                getSessionToken: getSessionToken,
+                authenticatedFetch: authenticatedFetch
+            };
+
+            getSessionToken()
+                .then(function () {
+                    console.info("Shopify session token auth is ready.");
+                })
+                .catch(function (error) {
+                    console.error(error);
+                    showAuthWarning("Shopify session token auth is unavailable. Open this page from Shopify Admin and confirm App Bridge configuration.");
+                });
+        })();
+    </script>
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <title>easycalc</title>
+</head>
+<body style="
+        font-family: Inter, monospace, system-ui, sans-serif, serif;
+        font-style: normal;
+        padding-left: 2rem;
+        font-size: small;
+">
+<h1>Merchant Uninstallation Instructions</h1>
+
+<h2>CartTransform Deactivation / Remove Cart Transform Permissions</h2>
+
+<h3>Open The Shopify GraphiQL App:</h3>
+<ul style="margin-bottom: 0;">
+    <li>In the Shopify GraphiQL App text area (top left of the app interface area), enter the
+        following (replacing all existing text):
+    </li>
+</ul>
+
+<div style="padding-left: 2.5rem; padding-right: 2.5rem;">
+<pre style="padding: 0.5rem; background: white;">
+query {
+  shopifyFunctions(first: 10) {
+    nodes {
+      id
+      title
+      apiType
+    }
+  }
+}</pre>
+</div>
+
+<ul style="margin-bottom: 0;">
+    <li>Run this query using the pink "Play" button in the center top of the app page.</li>
+    <li>in the results on the right, note the "id" of the shopify function with the name
+        "easycalc-cart-transform", it should look something like this:
+    </li>
+</ul>
+
+<div style="padding-left: 2.5rem; padding-right: 2.5rem;">
+<pre style="user-select: none; opacity: 0.75;">
+{
+  "id": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5", <-- copy this id
+  "title": "easycalc-cart-transform",
+  "apiType": "cart_transform"
+}</pre>
+</div>
+
+<ul style="margin-bottom: 0;">
+    <li>Now, in the text area that currently has the query text you just entered (top left of the
+        app interface area),
+        enter the following (replacing all existing text):
+    </li>
+</ul>
+
+<div style="padding-left: 2.5rem; padding-right: 2.5rem;">
+<pre style="padding: 0.5rem; background: white;">
+query {
+  cartTransforms(first: 10) {
+    nodes {
+      id
+      functionId
+    }
+  }
+}</pre>
+</div>
+
+<ul style="margin-bottom: 0;">
+    <li>Again, run this query using the pink "Play" button in the center top of the app page.</li>
+    <li>You should get results similar to the following:</li>
+</ul>
+
+<div style="padding-left: 2.5rem; padding-right: 2.5rem;">
+<pre style="user-select: none; opacity: 0.75;">
+{
+  "data": {
+    "cartTransforms": {
+      "nodes": [
+        {
+          "id": "gid://shopify/CartTransform/105906477",
+          "functionId": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5"
+        }
+      ]
+    }
+  },
+...</pre>
+</div>
+
+<ul style="margin-bottom: 0;">
+    <li>Find the cartTransform matching the "app ID" from before, for example: an "app ID" or
+        "functionId" of ""019db8e4-5594-7c1e-8d2d-07d0da1b76b5" may have a matching cart transform
+        ID of "gid://shopify/CartTransform/105906477" (include the quotation marks and the full
+        string of text).
+    </li>
+    <li>Now, in the text area that currently has the query text you just entered (top left of the
+        app interface area), enter the following (Replace "ID-GOES-HERE" with the "app ID" you
+        copied from the last step, including quotation marks, replacing all previous text from the
+        last step):
+    </li>
+</ul>
+
+<div style="padding-left: 2.5rem; padding-right: 2.5rem;">
+<pre style="padding: 0.5rem; background: white;">
+mutation {
+  cartTransformDelete(id: "ID-GOES-HERE") {
+    deletedId
+    userErrors {
+      field
+      message
+    }
+  }
+}</pre>
+</div>
+
+<ul style="margin-bottom: 0;">
+    <li>Again, run this query using the pink "Play" button in the center top of the app page.</li>
+    <li>The result should resemble the following, with no errors:</li>
+</ul>
+
+<div style="padding-left: 2.5rem; padding-right: 2.5rem;">
+<pre style="user-select: none; opacity: 0.75;">
+{
+  "data": {
+    "cartTransformDelete": {
+      "deletedId": "gid://shopify/CartTransform/105906477",
+      "userErrors": []
+    }
+  },
+....</pre>
+</div>
+
+<img style="max-width: stretch; max-height: 20rem; padding: 0.5rem 2rem;" src="images/shopify_doc_1.jpg" alt="shopify_doc_3">
+
+<br>
+<br>
+</body>
+
+</html>
