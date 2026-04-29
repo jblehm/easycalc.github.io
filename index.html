@@ -83,14 +83,13 @@
 
 <h3>Install the Shopify GraphiQL App:</h3>
 <ul style="margin-bottom: 0;">
-    <li>Go to <a href="https://shopify-graphiql-app.shopifycloud.com/login">https://shopify-graphiql-app.shopifycloud.com/login</a>
-    </li>
+    <li>Go to <a href="https://shopify-graphiql-app.shopifycloud.com/login">https://shopify-graphiql-app.shopifycloud.com/login</a>.</li>
     <li>In the "Shop URL" field, enter "makersuppliesau"</li>
-    <li>Make sure every "Scope" check box is unchecked. (you may need to scroll down)</li>
-    <li>Check only "cart_transforms" read and write (near the top left).</li>
-    <li>Click "Install" (near the top)</li>
-    <li>It will redirect you to your store, click "Install" again to update data access.</li>
-    <li>You should be automatically redirected to the Shopify GraphiQL App interface</li>
+    <li>Make sure every "Scope" check box is unchecked (you may need to scroll down).</li>
+    <li>Now Check only "cart_transforms" read and write (near the top left).</li>
+    <li>Click "Install" (near the top).</li>
+    <li>You should be automatically redirected you to your store, to confirm data access - click "Install".</li>
+    <li>You should be automatically redirected to the Shopify GraphiQL App interface.</li>
 </ul>
 
 <h3>Run Shopify GraphQL queries to activate cart transform permissions for your store:</h3>
@@ -100,7 +99,7 @@
     </li>
 </ul>
 
-<div style="white-space: pre-line; padding-left: 6rem;">
+<div style="padding-left: 1.5rem;">
     <pre>
         query {
             shopifyFunctions(first: 10) {
@@ -121,7 +120,7 @@
     </li>
 </ul>
 
-<div style="white-space: pre-line; padding-left: 6rem;">
+<div style="padding-left: 1.5rem;">
     <pre style="user-select: none; opacity: 0.75;">
         {
           "id": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5", <-- copy this id
@@ -142,7 +141,7 @@
     </li>
 </ul>
 
-<div style="white-space: pre-line; padding-left: 6rem;">
+<div style="padding-left: 1.5rem;">
     <pre>
         mutation {
           cartTransformCreate(functionId: "FUNCTION-ID-GOES-HERE") {
@@ -164,7 +163,7 @@
     <li>The result should resemble the following, with no errors:</li>
 </ul>
 
-<div style="white-space: pre-line; padding-left: 6rem;">
+<div style="padding-left: 1.5rem;">
     <pre style="user-select: none; opacity: 0.75;">
         {
           "data": {
@@ -371,7 +370,7 @@ different cut surcharges or markup percentages.
     </li>
 </ul>
 
-<div style="white-space: pre-line; padding-left: 6rem;">
+<div style="padding-left: 1.5rem;">
     <pre style="user-select: none; opacity: 0.75;">
         {
           "id": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5", <-- copy this id
@@ -381,7 +380,6 @@ different cut surcharges or markup percentages.
     </pre>
 </div>
 
-
 <ul style="margin-bottom: 0;">
     <li>Now, in the text area that currently has the query text you just entered (top left of the
         app interface area),
@@ -389,8 +387,7 @@ different cut surcharges or markup percentages.
     </li>
 </ul>
 
-
-<div style="white-space: pre-line; padding-left: 6rem;">
+<div style="padding-left: 1.5rem;">
     <pre>
         query {
           cartTransforms(first: 10) {
@@ -403,14 +400,12 @@ different cut surcharges or markup percentages.
     </pre>
 </div>
 
-
 <ul style="margin-bottom: 0;">
     <li>Again, run this query using the pink "Play" button in the center top of the app page.</li>
     <li>You should get results similar to the following:</li>
 </ul>
 
-
-<div style="white-space: pre-line; padding-left: 6rem;">
+<div style="padding-left: 1.5rem;">
     <pre style="user-select: none; opacity: 0.75;">
         {
           "data": {
@@ -440,7 +435,7 @@ different cut surcharges or markup percentages.
     </li>
 </ul>
 
-<div style="white-space: pre-line; padding-left: 6rem;">
+<div style="padding-left: 1.5rem;">
     <pre>
         mutation {
           cartTransformDelete(id: "ID-GOES-HERE") {
@@ -459,7 +454,7 @@ different cut surcharges or markup percentages.
     <li>The result should resemble the following, with no errors:</li>
 </ul>
 
-<div style="white-space: pre-line; padding-left: 6rem;">
+<div style="padding-left: 1.5rem;">
     <pre style="user-select: none; opacity: 0.75;">
         {
           "data": {
