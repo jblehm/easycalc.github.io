@@ -100,8 +100,17 @@
 </ul>
 
     <div style="white-space: pre-line; padding-left: 6rem;">
-        Variant Markup Percentage: 3.0
-        Cut Surcharge: 10
+        <pre>
+        query {
+        shopifyFunctions(first: 10) {
+        nodes {
+        id
+        title
+        apiType
+        }
+        }
+        }
+            </pre>
     </div>
 
 
