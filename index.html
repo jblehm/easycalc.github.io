@@ -100,16 +100,16 @@
 </ul>
 
 <div style="padding-left: 1.5rem;">
-    <pre>
-        query {
-            shopifyFunctions(first: 10) {
-                nodes {
-                    id
-                    title
-                    apiType
-                }
-            }
-        }</pre>
+<pre style="padding: 0.5rem; background: white;">
+query {
+    shopifyFunctions(first: 10) {
+        nodes {
+            id
+            title
+            apiType
+        }
+    }
+}</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
@@ -120,12 +120,12 @@
 </ul>
 
 <div style="padding-left: 1.5rem;">
-    <pre style="user-select: none; opacity: 0.75;">
-        {
-          "id": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5", <-- copy this id
-          "title": "easycalc-cart-transform",
-          "apiType": "cart_transform"
-        }</pre>
+<pre style="user-select: none; opacity: 0.75;">
+{
+  "id": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5", <-- copy this id
+  "title": "easycalc-cart-transform",
+  "apiType": "cart_transform"
+}</pre>
 </div>
 
 <img style="max-width: stretch; max-height: 20rem;" src="images/shopify_doc_1.jpg">
@@ -140,19 +140,19 @@
 </ul>
 
 <div style="padding-left: 1.5rem;">
-    <pre>
-        mutation {
-          cartTransformCreate(functionId: "FUNCTION-ID-GOES-HERE") {
-            cartTransform {
-              id
-              functionId
-            }
-            userErrors {
-              field
-              message
-            }
-          }
-        }</pre>
+<pre style="padding: 0.5rem; background: white;">
+mutation {
+  cartTransformCreate(functionId: "FUNCTION-ID-GOES-HERE") {
+    cartTransform {
+      id
+      functionId
+    }
+    userErrors {
+      field
+      message
+    }
+  }
+}</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
@@ -161,18 +161,18 @@
 </ul>
 
 <div style="padding-left: 1.5rem;">
-    <pre style="user-select: none; opacity: 0.75;">
-        {
-          "data": {
-            "cartTransformCreate": {
-              "cartTransform": {
-                "id": "gid://shopify/CartTransform/105906477",
-                "functionId": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5"
-              },
-              "userErrors": []
-            }
-          },
-          ....</pre>
+<pre style="user-select: none; opacity: 0.75;">
+{
+  "data": {
+    "cartTransformCreate": {
+      "cartTransform": {
+        "id": "gid://shopify/CartTransform/105906477",
+        "functionId": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5"
+      },
+      "userErrors": []
+    }
+  },
+....</pre>
 </div>
 
 <img style="max-width: stretch; max-height: 20rem;" src="images/shopify_doc_2.jpg">
@@ -346,16 +346,16 @@ different cut surcharges or markup percentages.
 </ul>
 
 <div style="white-space: pre-line; padding-left: 6rem;">
-    <pre>
-        query {
-          shopifyFunctions(first: 10) {
-            nodes {
-              id
-              title
-              apiType
-            }
-          }
-        }</pre>
+<pre style="padding: 0.5rem; background: white;">
+query {
+  shopifyFunctions(first: 10) {
+    nodes {
+      id
+      title
+      apiType
+    }
+  }
+}</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
@@ -366,12 +366,12 @@ different cut surcharges or markup percentages.
 </ul>
 
 <div style="padding-left: 1.5rem;">
-    <pre style="user-select: none; opacity: 0.75;">
-        {
-          "id": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5", <-- copy this id
-          "title": "easycalc-cart-transform",
-          "apiType": "cart_transform"
-        }</pre>
+<pre style="user-select: none; opacity: 0.75;">
+{
+  "id": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5", <-- copy this id
+  "title": "easycalc-cart-transform",
+  "apiType": "cart_transform"
+}</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
@@ -382,15 +382,15 @@ different cut surcharges or markup percentages.
 </ul>
 
 <div style="padding-left: 1.5rem;">
-    <pre>
-        query {
-          cartTransforms(first: 10) {
-            nodes {
-              id
-              functionId
-            }
-          }
-        }</pre>
+<pre style="padding: 0.5rem; background: white;">
+query {
+  cartTransforms(first: 10) {
+    nodes {
+      id
+      functionId
+    }
+  }
+}</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
@@ -399,19 +399,19 @@ different cut surcharges or markup percentages.
 </ul>
 
 <div style="padding-left: 1.5rem;">
-    <pre style="user-select: none; opacity: 0.75;">
+<pre style="user-select: none; opacity: 0.75;">
+{
+  "data": {
+    "cartTransforms": {
+      "nodes": [
         {
-          "data": {
-            "cartTransforms": {
-              "nodes": [
-                {
-                  "id": "gid://shopify/CartTransform/105906477",
-                  "functionId": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5"
-                }
-              ]
-            }
-          },
-        ...</pre>
+          "id": "gid://shopify/CartTransform/105906477",
+          "functionId": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5"
+        }
+      ]
+    }
+  },
+...</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
@@ -428,16 +428,16 @@ different cut surcharges or markup percentages.
 </ul>
 
 <div style="padding-left: 1.5rem;">
-    <pre>
-        mutation {
-          cartTransformDelete(id: "ID-GOES-HERE") {
-            deletedId
-            userErrors {
-              field
-              message
-            }
-          }
-        }</pre>
+<pre style="padding: 0.5rem; background: white;">
+mutation {
+  cartTransformDelete(id: "ID-GOES-HERE") {
+    deletedId
+    userErrors {
+      field
+      message
+    }
+  }
+}</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
@@ -446,15 +446,15 @@ different cut surcharges or markup percentages.
 </ul>
 
 <div style="padding-left: 1.5rem;">
-    <pre style="user-select: none; opacity: 0.75;">
-        {
-          "data": {
-            "cartTransformDelete": {
-              "deletedId": "gid://shopify/CartTransform/105906477",
-              "userErrors": []
-            }
-          },
-        ....</pre>
+<pre style="user-select: none; opacity: 0.75;">
+{
+  "data": {
+    "cartTransformDelete": {
+      "deletedId": "gid://shopify/CartTransform/105906477",
+      "userErrors": []
+    }
+  },
+....</pre>
 </div>
 
 <img style="max-width: stretch; max-height: 20rem;" src="images/shopify_doc_1.jpg">
