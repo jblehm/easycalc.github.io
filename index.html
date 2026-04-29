@@ -79,7 +79,56 @@
 ">
 <h1>Merchant Setup Instructions</h1>
 
-<h2>1. Metafields</h2>
+<h2>1. CartTransform Activation</h2>
+
+<h3>Install the Shopify GraphiQL App:</h3>
+<ul style="margin-bottom: 0;">
+    <li>Go to <a>https://shopify-graphiql-app.shopifycloud.com/login</a></li>
+    <li>In the "Shop URL" field, enter "makersuppliesau"</li>
+    <li>Make sure every "Scope" check box is unchecked. (you may need to scroll down)</li>
+    <li>Check only "cart_transforms" read and write (near the top left).</li>
+    <li>Click "Install" (near the top)</li>
+    <li>It will redirect you to your store, click "Install" again to update data access.</li>
+    <li>You should be redirected to the Shopify GraphiQL App interface;</li>
+</ul>
+
+
+<h3>Run Shopify GraphQL queries to activate cart transform permissions for your store:</h3>
+<ul style="margin-bottom: 0;">
+    <li>In the text area that currently has "mutation" text (top left of the app interface area),
+        enter the following (replacing all text that is currently there):</li>
+</ul>
+
+    <div style="white-space: pre-line; padding-left: 6rem;">
+        Variant Markup Percentage: 3.0
+        Cut Surcharge: 10
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2>2. Metafields</h2>
 
 <h3>Add Required Product meta fields:</h3>
 <ul style="margin-bottom: 0;">
@@ -144,7 +193,7 @@
 </div>
 
 
-<h2>2. Products</h2>
+<h2>3. Products</h2>
 <h3>Add a new product:</h3>
 <ul style="margin-bottom: 0;">
     <li>call it "Aluminium plate test".</li>
@@ -186,7 +235,7 @@
 </ul>
 
 
-<h2>3. UI Template</h2>
+<h2>4. UI Template</h2>
 <h3>Add a template including the app ui</h3>
 <ul>
     <li>On the left, under "Sales channels", click on "Online Store" (don't click the eye)</li>
@@ -213,7 +262,7 @@
     <li>Click save up the top right.</li>
 </ul>
 
-<h2>4. Validation</h2>
+<h2>5. Validation</h2>
 <h3>Verify everything has worked.</h3>
 <ul>
     <li>As the new sheet material should be unlisted, go back to "Products", find "Aluminium Plate
@@ -223,7 +272,7 @@
     <li>Save the URL and share it stake-holders for testing.</li>
 </ul>
 
-<h2>5. Finally</h2>
+<h2>6. Finally</h2>
 <h3>Customize and add more products as needed.</h3>
 Once you are comfortable, you can add more products with different metafield values, for example,
 different cut surcharges or markup percentages.
