@@ -82,6 +82,24 @@
   + Save each time.
 
 
+### Add a new product:
++ call it "Calculated Shipping Weight".
++ Set it's status to "Unlisted" (top right)
++ Set it's "Price" to $0
++ Set it's "Weight" to 0.5kg
++ Mark it's "Inventory" as "not tracked"
+
++ Click save
+
++ Once the "Calculated Shipping Weight" Product has been created, follow these steps to obtain it's Variant ID:
+  + Go to the "Calculated Shipping Weight" Product page
+  + Add ".json" to the page URL, it should look like this "https://admin.shopify.com/store/STORENAME/products/1234567890.json"
+  + Press Return/Enter to navigate to that URL
+  + You should be shown JSON of raw data, find the word "variants", get the first (and only) "id" value following
+  + It should look like this:
+    + ...,"variants":[{"id":49215967265012,...
+
+
 ## 3. UI Template
 ### Add a template including the app ui
 + On the left, under "Sales channels", click on "Online Store" (don't click the eye)

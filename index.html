@@ -318,6 +318,31 @@ mutation {
     <li>Save each time.</li>
 </ul>
 
+<br>
+<br>
+
+<h3>Add a new product:</h3>
+<ul style="margin-bottom: 0;">
+    <li>call it "Calculated Shipping Weight".</li>
+    <li>Set it's status to "Unlisted" (top right)</li>
+    <li>Set it's "Price" to $0</li>
+    <li>Set it's "Weight" to 0.5kg</li>
+    <li>Mark it's "Inventory" as "not tracked"</li>
+    <li>Click save</li>
+    <li>Once the "Calculated Shipping Weight" Product has been created, follow these steps to obtain it's Variant ID:
+        <ul>
+            <li>Go to the "Calculated Shipping Weight" Product page</li>
+            <li>Add ".json" to the page URL, it should look like this "https://admin.shopify.com/store/STORENAME/products/1234567890.json"</li>
+            <li>Press Return/Enter to navigate to that URL</li>
+            <li>You should be shown JSON of raw data, find the word "variants", get the first (and only) "id" value following</li>
+            <li>It should look like this:
+                <ul>
+                    <li>...,"variants":[{"id":49215967265012,...</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
 
 <br>
 <br>
