@@ -33,27 +33,8 @@
         <ul style="margin-bottom: 0;">
             <li>Start by clicking "Add definition" if you haven't already.</li>
             <li>Set the "Name" to "weight rounding"</li>
-            <li>Set the "Type" to "Metaobject"
-                <ul style="margin-bottom: 0;">
-                    <li>After clicking "Metaobject" type, click "Create new"
-                        <img style="max-width: stretch; max-height: 30rem; padding: 0.5rem 2rem;"
-                             src="images/shopify_doc_7.jpg" alt="shopify_doc_7">
-                        <img style="max-width: stretch; max-height: 30rem; padding: 0.5rem 2rem;"
-                             src="images/shopify_doc_8.jpg" alt="shopify_doc_8">
-                    </li>
-                    <li>Set the metaobject "Name" to "weight rounding object"</li>
-                    <li>Set the first field label to "value grams"</li>
-                    <li>Set the first field type to "Integer"</li>
-                    <li>Click "Add field" to add a second field</li>
-                    <li>Set the second field label to "weight product variant id"</li>
-                    <li>Set the second field type to "Single line text"</li>
-                    <img style="max-width: stretch; max-height: 30rem; padding: 0.5rem 2rem;"
-                         src="images/shopify_doc_9.jpg" alt="shopify_doc_9">
-                    <li>Click "Save" to save the new Metaobject</li>
-                </ul>
-            </li>
-            <li>Once returned to the metafield page, click "Save" again to save the new Metafield.
-            </li>
+            <li>Set the "Type" to "JSON"</li>
+            <li>Click "Save" to save the new Metafield.</li>
         </ul>
 
     </li>
@@ -68,12 +49,13 @@
 
 <ul style="margin-bottom: 0;">
     <li>Go to the "Products" page, search for and select the "aluminium-plate-test" product</li>
-    <li>Scroll down to "Product metafields", click the "weight rounding" field and select "Add new
-        entry"
+    <li>Scroll down to "Product metafields", click the "weight rounding" field and enter the
+        following:
+        <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
+            <pre style="user-select: none; opacity: 0.75;">{"value_grams":500,"weight_product_variant_id":49215967265012}</pre>
+        </div>
     </li>
-    <li>In the first field labeled "value grams", enter 500</li>
-    <li>In the second field labeled "weight product variant id", enter 49215967265012</li>
-    <li>Click "Save"</li>
+    <li>Click "Save" up the top, to save the Product</li>
 </ul>
 
 
