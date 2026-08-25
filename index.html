@@ -162,7 +162,10 @@ query {
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
 <pre style="padding: 0.5rem; background: white;">
 mutation {
-  cartTransformCreate(functionId: "FUNCTION-ID-GOES-HERE") {
+  cartTransformCreate(
+    blockOnFailure: true,
+    functionId: "FUNCTION-ID-GOES-HERE"
+    ) {
     cartTransform {
       id
       functionId
