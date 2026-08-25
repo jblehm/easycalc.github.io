@@ -24,7 +24,9 @@
             <li>Check both "cart_transforms" checkboxes, read and write (near the top left).</li>
             <li>In the "Shop URL" field, enter "makersuppliesau" (near the top)</li>
             <li>Click "Install" (near the top).</li>
-            <li>You should be automatically redirected you to your store, to confirm data access - click "Install".</li>
+            <li>You should be automatically redirected you to your store, to confirm data access -
+                click "Install".
+            </li>
             <li>You should be automatically redirected to the Shopify GraphiQL App interface.</li>
         </ul>
     </li>
@@ -38,19 +40,20 @@
 </ul>
 
 
-
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
-<pre style="padding: 0.5rem; background: white;">query { shopifyFunctions(first: 10) { nodes { id title apiType } } }</pre>
+    <pre style="padding: 0.5rem; background: white;">query { shopifyFunctions(first: 10) { nodes { id title apiType } } }</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
     <li>It should match the following:</li>
 </ul>
-<img style="max-width: stretch; max-height: 20rem; padding: 0.5rem 2rem;" src="images/shopify_doc_6.jpg" alt="shopify_doc_6">
+<img style="max-width: stretch; max-height: 20rem; padding: 0.5rem 2rem;"
+     src="images/shopify_doc_6.jpg" alt="shopify_doc_6">
 
 <ul style="margin-bottom: 0;">
     <li>Run this query using the pink "Play" button in the center top of the app page.</li>
-    <li>in the results on the right, find the Shopify function with the name "easycalc-cart-transform", it should look something like this:
+    <li>in the results on the right, find the Shopify function with the name
+        "easycalc-cart-transform", it should look something like this:
     </li>
 </ul>
 
@@ -64,7 +67,9 @@
 </div>
 
 <ul style="margin-bottom: 0;">
-    <li>Copy the "id" value, it should look something like this: "019db248-1a05-722a-872d-a59476eb0ca9"</li>
+    <li>Copy the "id" value, it should look something like this:
+        "019db248-1a05-722a-872d-a59476eb0ca9"
+    </li>
 </ul>
 
 
@@ -81,12 +86,14 @@
 
 
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
-<pre style="padding: 0.5rem; background: white;">query { cartTransforms(first: 10) { nodes { id functionId } } }</pre>
+    <pre style="padding: 0.5rem; background: white;">query { cartTransforms(first: 10) { nodes { id functionId } } }</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
     <li>Run this query using the pink "Play" button in the center top of the app page.</li>
-    <li>In the results on the right, copy both the "id" of the "cartTransforms" result with the "functionId" matching the id you just copied, it should look something like this:</li>
+    <li>In the results on the right, copy both the "id" of the "cartTransforms" result with the
+        "functionId" matching the id you just copied, it should look something like this:
+    </li>
 </ul>
 
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
@@ -105,8 +112,12 @@
 </div>
 
 <ul style="margin-bottom: 0;">
-    <li>Copy the "id" value, it should look something like this: "gid://shopify/CartTransform/125534424"</li>
-    <li>Copy the "functionId" value, it should look something like this: "019db248-1a05-722a-872d-a59476eb0ca9"</li>
+    <li>Copy the "id" value, it should look something like this:
+        "gid://shopify/CartTransform/125534424"
+    </li>
+    <li>Copy the "functionId" value, it should look something like this:
+        "019db248-1a05-722a-872d-a59476eb0ca9"
+    </li>
 </ul>
 
 
@@ -119,11 +130,13 @@
         app interface area),
         enter the following (replacing all existing text):
     </li>
-    <li style="font-weight: 600;">(Be sure to replace the id in the following query with the id you just copied)</li>
+    <li style="font-weight: 600;">(Be sure to replace the id in the following query with the id you
+        just copied)
+    </li>
 </ul>
 
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
-<pre style="padding: 0.5rem; background: white;">mutation { cartTransformDelete(id: "gid://shopify/CartTransform/125534424") { userErrors { field message } } }</pre>
+    <pre style="padding: 0.5rem; background: white;">mutation { cartTransformDelete(id: "gid://shopify/CartTransform/125534424") { userErrors { field message } } }</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
@@ -153,7 +166,9 @@
         app interface area),
         enter the following (replacing all existing text):
     </li>
-    <li style="font-weight: 600;">(Be sure to replace the functionId in the following query with the functionId you copied in a previous step)</li>
+    <li style="font-weight: 600;">(Be sure to replace the functionId in the following query with the
+        functionId you copied in a previous step)
+    </li>
 </ul>
 
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
@@ -194,7 +209,8 @@
 <br>
 <br>
 <br>
-<a href="index.html" style="font-size: larger; font-weight: 600; color: black; opacity: 0.75;">Back to Setup</a>
+<a href="index.html" style="font-size: larger; font-weight: 600; color: black; opacity: 0.75;">Back
+    to Setup</a>
 <br>
 <br>
 <br>
