@@ -77,63 +77,74 @@
         padding-left: 2rem;
         font-size: small;
 ">
-<h1>Merchant Uninstallation Instructions</h1>
+<h1>Merchant CartTransform Update</h1>
 
-<h2>CartTransform Deactivation / Remove Cart Transform Permissions</h2>
+<h2>Update CartTransform With "Block On Failure"</h2>
 
 <h3>Open The Shopify GraphiQL App:</h3>
 <ul style="margin-bottom: 0;">
+    <li>In Shopify, under Apps, you should have "Shopify GraphiQL App" installed, if not:
+        <ul style="margin-bottom: 0;">
+            <li>Go to https://shopify-graphiql-app.shopifycloud.com/login.</li>
+            <li>Check both "cart_transforms" checkboxes, read and write (near the top left).</li>
+            <li>In the "Shop URL" field, enter "makersuppliesau" (near the top)</li>
+            <li>Click "Install" (near the top).</li>
+            <li>You should be automatically redirected you to your store, to confirm data access - click "Install".</li>
+            <li>You should be automatically redirected to the Shopify GraphiQL App interface.</li>
+        </ul>
+    </li>
+</ul>
+
+
+<ul style="margin-bottom: 0;">
+    <li>Open Shopify GraphiQL App if it isn't already displayed.</li>
+    <img style="max-width: stretch; max-height: 30rem; padding: 0.5rem 2rem;" src="images/shopify_doc_4.jpg" alt="shopify_doc_6">
     <li>In the Shopify GraphiQL App text area (top left of the app interface area), enter the
         following (replacing all existing text):
     </li>
 </ul>
 
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
-<pre style="padding: 0.5rem; background: white;">
-query {
-  shopifyFunctions(first: 10) {
-    nodes {
-      id
-      title
-      apiType
-    }
-  }
-}</pre>
+<pre style="padding: 0.5rem; background: white;">query { cartTransforms(first: 10) { nodes { id functionId } } }</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
     <li>Run this query using the pink "Play" button in the center top of the app page.</li>
-    <li>in the results on the right, note the "id" of the shopify function with the name
-        "easycalc-cart-transform", it should look something like this:
-    </li>
+    <li>In the results on the right, note the "id" and "functionId" of the only result, it should look something like this:</li>
+    <li>If there are multiple results under "cartTransforms" (excluding the "extensions" information), stop.</li>
 </ul>
 
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
 <pre style="user-select: none; opacity: 0.75;">
 {
-  "id": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5", <-- remember this id
-  "title": "easycalc-cart-transform",
-  "apiType": "cart_transform"
-}</pre>
+  "data": {
+    "cartTransforms": {
+      "nodes": [
+        {
+          "id": "gid://shopify/CartTransform/125763800",         <-- copy this
+          "functionId": "019db248-1a05-722a-872d-a59476eb0ca9"   <-- copy this
+        }
+      ]
+    }
+  },</pre>
 </div>
+
+<ul style="margin-bottom: 0;">
+    <li>Copy the "id" value, it should look something like this: "gid://shopify/CartTransform/125534424"</li>
+    <li>Copy the "functionId" value, it should look something like this: "019db248-1a05-722a-872d-a59476eb0ca9"</li>
+</ul>
+
 
 <ul style="margin-bottom: 0;">
     <li>Now, in the text area that currently has the query text you just entered (top left of the
         app interface area),
         enter the following (replacing all existing text):
     </li>
+    <li>(Be sure to replace the id in the following query with the id you just copied)</li>
 </ul>
 
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
-<pre style="padding: 0.5rem; background: white;">
-query {
-  cartTransforms(first: 10) {
-    nodes {
-      id
-      functionId
-    }
-  }
-}</pre>
+<pre style="padding: 0.5rem; background: white;">mutation { cartTransformDelete(id: "gid://shopify/CartTransform/125534424") { userErrors { field message } } }</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
@@ -145,71 +156,53 @@ query {
 <pre style="user-select: none; opacity: 0.75;">
 {
   "data": {
-    "cartTransforms": {
-      "nodes": [
-        {
-          "id": "gid://shopify/CartTransform/105906477", <-- copy and use this id
-          "functionId": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5" <-- should match previous step
-        }
-      ]
+    "cartTransformDelete": {
+      "userErrors": []
     }
   },
+  "extensions": {
 ...</pre>
 </div>
 
+
+
+
+
+
+
+
 <ul style="margin-bottom: 0;">
-    <li>Find the cartTransform matching the "id" from before, for example: a "functionId" of 
-        ""019db8e4-5594-7c1e-8d2d-07d0da1b76b5" may have a matching cart transform
-        ID of "gid://shopify/CartTransform/105906477" (include the quotation marks and the full
-        string of text).
-    </li>
     <li>Now, in the text area that currently has the query text you just entered (top left of the
-        app interface area), enter the following (Replace "ID-GOES-HERE" with the "app ID" you
-        copied from the last step, including quotation marks, replacing all previous text from the
-        last step. For example, you would enter "gid://shopify/CartTransform/123456789" replacing 
-        "ID-GOES-HERE" in the following query):
+        app interface area),
+        enter the following (replacing all existing text):
     </li>
+    <li>(Be sure to replace the functionId in the following query with the functionId you copied in a previous step)</li>
 </ul>
 
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
-<pre style="padding: 0.5rem; background: white;">
-mutation {
-  cartTransformDelete(id: "ID-GOES-HERE") {
-    deletedId
-    userErrors {
-      field
-      message
-    }
-  }
-}</pre>
+    <pre style="padding: 0.5rem; background: white;">mutation { cartTransformCreate(blockOnFailure: true, functionId: "019db248-1a05-722a-872d-a59476eb0ca9") { cartTransform { id functionId } userErrors { field message } } }</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
     <li>Again, run this query using the pink "Play" button in the center top of the app page.</li>
-    <li>The result should resemble the following, with no errors:</li>
+    <li>You should get results similar to the following:</li>
 </ul>
 
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
 <pre style="user-select: none; opacity: 0.75;">
 {
   "data": {
-    "cartTransformDelete": {
-      "deletedId": "gid://shopify/CartTransform/105906477",
+    "cartTransformCreate": {
+      "cartTransform": {
+        "id": "gid://shopify/CartTransform/125796568",
+        "functionId": "019db248-1a05-722a-872d-a59476eb0ca9"
+      },
       "userErrors": []
     }
   },
-....</pre>
+  "extensions": {
+...</pre>
 </div>
-
-<img style="max-width: stretch; max-height: 20rem; padding: 0.5rem 2rem;" src="images/shopify_doc_1.jpg" alt="shopify_doc_3">
-
-<br>
-<br>
-<br>
-<a href="index.html" style="font-size: larger; font-weight: 600; color: black; opacity: 0.75;">Back to Setup</a>
-<br>
-<br>
-<br>
 </body>
 
 </html>
