@@ -38,14 +38,55 @@
     </li>
 </ul>
 
+
+
+<div style="padding-left: 2.5rem; padding-right: 2.5rem;">
+<pre style="padding: 0.5rem; background: white;">query { shopifyFunctions(first: 10) { nodes { id title apiType } } }</pre>
+</div>
+
+<ul style="margin-bottom: 0;">
+    <li>Run this query using the pink "Play" button in the center top of the app page.</li>
+    <li>in the results on the right, note the "id" of the shopify function with the name
+        "easycalc-cart-transform", it should look something like this:
+    </li>
+</ul>
+
+<div style="padding-left: 2.5rem; padding-right: 2.5rem;">
+<pre style="user-select: none; opacity: 0.75;">
+{
+  "id": "019db8e4-5594-7c1e-8d2d-07d0da1b76b5",
+  "title": "easycalc-cart-transform",
+  "apiType": "cart_transform"
+}</pre>
+</div>
+
+<ul style="margin-bottom: 0;">
+    <li>Copy the "id" value, it should look something like this: "019db248-1a05-722a-872d-a59476eb0ca9"</li>
+</ul>
+
+
+<br>
+<br>
+
+
+
+
+
+<ul style="margin-bottom: 0;">
+    <li>Now, in the text area that currently has the query text you just entered (top left of the
+        app interface area),
+        enter the following (replacing all existing text):
+    </li>
+</ul>
+
+
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
 <pre style="padding: 0.5rem; background: white;">query { cartTransforms(first: 10) { nodes { id functionId } } }</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
     <li>Run this query using the pink "Play" button in the center top of the app page.</li>
-    <li>In the results on the right, note the "id" and "functionId" of the only result, it should look something like this:</li>
-    <li>If there are multiple results under "cartTransforms" (excluding the "extensions" information), stop.</li>
+    <li>In the results on the right, copy both the "id" of the "cartTransforms" result with the "functionId" matching the id you just copied, it should look something like this:</li>
 </ul>
 
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
@@ -55,8 +96,8 @@
     "cartTransforms": {
       "nodes": [
         {
-          "id": "gid://shopify/CartTransform/125763800",         <-- copy this
-          "functionId": "019db248-1a05-722a-872d-a59476eb0ca9"   <-- copy this
+          "id": "gid://shopify/CartTransform/125763800",
+          "functionId": "019db248-1a05-722a-872d-a59476eb0ca9" <-- should match "id" from previous step
         }
       ]
     }
@@ -67,6 +108,10 @@
     <li>Copy the "id" value, it should look something like this: "gid://shopify/CartTransform/125534424"</li>
     <li>Copy the "functionId" value, it should look something like this: "019db248-1a05-722a-872d-a59476eb0ca9"</li>
 </ul>
+
+
+<br>
+<br>
 
 
 <ul style="margin-bottom: 0;">
@@ -97,6 +142,11 @@
   "extensions": {
 ...</pre>
 </div>
+
+
+<br>
+<br>
+
 
 <ul style="margin-bottom: 0;">
     <li>Now, in the text area that currently has the query text you just entered (top left of the
@@ -130,13 +180,24 @@
   "extensions": {
 ...</pre>
 </div>
+
+
+<br>
+<br>
+
+
+<ul style="margin-bottom: 0;">
+    <li>All done.</li>
+</ul>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 </body>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
 </html>
