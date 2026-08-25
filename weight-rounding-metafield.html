@@ -17,32 +17,43 @@
 <h2>Add Weight Rounding Metafield</h2>
 
 <ul style="margin-bottom: 0;">
+    <li>Navigate to the Metafields page in Shopify</li>
     <li>(Go to "Settings" down the bottom left, click on "Metafields and metaobjects" in the lower
         left)
     </li>
-    <li>Click on "Products" metafields</li>
-    <li>Click on, select "More actions" and chose "Delete Definition" for the existing "weight rounding value" Product metafield</li>
-    <li>Select "Delete field and its saved values" if prompted</li>
-    <li>Go back to "Products" metafields page if necessary</li>
+    <li>Click on "Products" to view the Product Metafields</li>
+    <li>Remove the existing "weight rounding value" Product Metafield</li>
+    <li>(Click on the Metafield, select "More actions", chose "Delete Definition" and select "Delete
+        field and its saved values" if prompted)
+    </li>
+    <li>Go back to the Products Metafields page if necessary</li>
     <li>Add the following Product Metafield Definition:
         <ul style="margin-bottom: 0;">
             <li>Start by clicking "Add definition" if you haven't already.</li>
             <li>Set the "Name" to "weight rounding"</li>
             <li>Set the "Type" to "Metaobject"
                 <ul style="margin-bottom: 0;">
-                    <li>Click the "Metaobject" type and then click "Create new"</li>
+                    <li>After clicking "Metaobject" type, click "Create new"
+                        <img style="max-width: stretch; max-height: 30rem; padding: 0.5rem 2rem;"
+                             src="images/shopify_doc_7.jpg" alt="shopify_doc_7">
+                        <img style="max-width: stretch; max-height: 30rem; padding: 0.5rem 2rem;"
+                             src="images/shopify_doc_8.jpg" alt="shopify_doc_8">
+                    </li>
                     <li>Set the metaobject "Name" to "weight rounding object"</li>
-                    <li>Set the first field label to "weight rounding value"</li>
-                    <li>Set the first field type to "Weight"</li>
+                    <li>Set the first field label to "value grams"</li>
+                    <li>Set the first field type to "Integer"</li>
                     <li>Click "Add field" to add a second field</li>
                     <li>Set the second field label to "weight product variant id"</li>
                     <li>Set the second field type to "Single line text"</li>
+                    <img style="max-width: stretch; max-height: 30rem; padding: 0.5rem 2rem;"
+                         src="images/shopify_doc_9.jpg" alt="shopify_doc_9">
                     <li>Click "Save" to save the new Metaobject</li>
                 </ul>
             </li>
-            <li>Once returned to the metafield page, click "Save" again to save the new Metafield.</li>
+            <li>Once returned to the metafield page, click "Save" again to save the new Metafield.
+            </li>
         </ul>
-    
+
     </li>
 </ul>
 
@@ -50,12 +61,15 @@
 <br>
 <br>
 
+
 <h2>Update Product Weight Rounding Metafield</h2>
 
 <ul style="margin-bottom: 0;">
     <li>Go to the "Products" page, search for and select the "aluminium-plate-test" product</li>
-    <li>Scroll down to "Product metafields", click the "weight rounding" field and select "Add new entry"</li>
-    <li>In the first field labeled "weight rounding value", enter 500 (ensure the scale is in grams)</li>
+    <li>Scroll down to "Product metafields", click the "weight rounding" field and select "Add new
+        entry"
+    </li>
+    <li>In the first field labeled "value grams", enter 500</li>
     <li>In the second field labeled "weight product variant id", enter 49215967265012</li>
     <li>Click "Save"</li>
 </ul>
