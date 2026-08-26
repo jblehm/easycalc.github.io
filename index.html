@@ -250,7 +250,8 @@ mutation {
 <div style="white-space: pre-line; padding-left: 5rem; padding-bottom: 0.25rem;">
     Name: Weight Rounding
     Type: JSON
-    Description: Nearest weight to round material weights to, eg: 500g, and product ID used during shipping weight calculation.
+    Description: Nearest weight to round material weights to, eg: 500g, and product ID used during
+    shipping weight calculation.
 </div>
 
 <h3>Add required variant meta fields:</h3>
@@ -332,24 +333,29 @@ mutation {
     <li>Set it's "Weight" to 0.5kg</li>
     <li>Mark it's "Inventory" as "not tracked"</li>
     <li>Click save</li>
-    <li>Once the "Calculated Shipping Weight" Product has been created, follow these steps to obtain it's Variant ID:
+    <li>Once the "Calculated Shipping Weight" Product has been created, follow these steps to obtain
+        it's Variant ID:
         <ul>
-            <li>Shopify creates a single default "variant" even on products with no explicit variants, unfortunately, the ID of which is required</li>
+            <li>Shopify creates a single default "variant" even on products with no explicit
+                variants, unfortunately, the ID of which is required
+            </li>
             <li>Go to the "Calculated Shipping Weight" Product page</li>
-            <li>Add ".json" to the page URL, it should look like this "https://admin.shopify.com/store/STORENAME/products/1234567890.json"</li>
+            <li>Add ".json" to the page URL, it should look like this
+                "https://admin.shopify.com/store/STORENAME/products/1234567890.json"
+            </li>
             <li>Press Return/Enter to navigate to that URL</li>
             <li>You should be shown JSON of raw data, find the word "variants"</li>
             <li>(in a browser, you can press <b>Ctrl+f</b> to search for text)</li>
             <li>It should look like this:
-                <ul>
-                    <li>...,"variants":[{"id":49215967265012,...</li>
-                </ul>
+                <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                    <pre style="user-select: none; opacity: 0.75;">...,"variants":[{"id":49215967265012,...</pre>
+                </div>
             </li>
-            <li>Carefully copy the subsequent "id" value </li>            
+            <li>Carefully copy the subsequent "id" value</li>
             <li>It should look like this:
-                <ul>
-                    <li>49215967265012</li>
-                </ul>
+                <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
+                    <pre style="user-select: none; opacity: 0.75;">49215967265012</pre>
+                </div>
             </li>
         </ul>
     </li>
@@ -423,15 +429,18 @@ different cut surcharges or markup percentages.
 <br>
 <br>
 <a href="uninstallation.html"
-   style="font-size: larger; font-weight: 600; color: black; opacity: 0.75;">Uninstallation Instructions</a>
+   style="font-size: larger; font-weight: 600; color: black; opacity: 0.75;">Uninstallation
+    Instructions</a>
 <br>
 <br>
 <a href="update-cart-transform.html"
-   style="font-size: larger; font-weight: 600; color: black; opacity: 0.75;">Cart Transform Update Instructions</a>
+   style="font-size: larger; font-weight: 600; color: black; opacity: 0.75;">Cart Transform Update
+    Instructions</a>
 <br>
 <br>
 <a href="weight-rounding-metafield.html"
-   style="font-size: larger; font-weight: 600; color: black; opacity: 0.75;">Weight Rounding Metafield Instructions</a>
+   style="font-size: larger; font-weight: 600; color: black; opacity: 0.75;">Weight Rounding
+    Metafield Instructions</a>
 <br>
 <br>
 <br>
