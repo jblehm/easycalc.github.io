@@ -11,6 +11,7 @@
         font-style: normal;
         padding-left: 2rem;
         font-size: small;
+        background-color: #ebebeb;
 ">
 <h1>Merchant CartTransform Update</h1>
 
@@ -41,7 +42,7 @@
 
 
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
-    <pre style="padding: 0.5rem; background: white;">query { shopifyFunctions(first: 10) { nodes { id title apiType } } }</pre>
+    <pre style="padding: 0.5rem; background: white; width: fit-content;">query { shopifyFunctions(first: 10) { nodes { id title apiType } } }</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
@@ -86,7 +87,7 @@
 
 
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
-    <pre style="padding: 0.5rem; background: white;">query { cartTransforms(first: 10) { nodes { id functionId } } }</pre>
+    <pre style="padding: 0.5rem; background: white; width: fit-content;">query { cartTransforms(first: 10) { nodes { id functionId } } }</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
@@ -136,7 +137,7 @@
 </ul>
 
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
-    <pre style="padding: 0.5rem; background: white;">mutation { cartTransformDelete(id: "gid://shopify/CartTransform/125534424") { userErrors { field message } } }</pre>
+    <pre style="padding: 0.5rem; background: white; width: fit-content;">mutation { cartTransformDelete(id: "gid://shopify/CartTransform/125534424") { userErrors { field message } } }</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
@@ -172,7 +173,7 @@
 </ul>
 
 <div style="padding-left: 2.5rem; padding-right: 2.5rem;">
-    <pre style="padding: 0.5rem; background: white;">mutation { cartTransformCreate(blockOnFailure: true, functionId: "019db248-1a05-722a-872d-a59476eb0ca9") { cartTransform { id functionId } userErrors { field message } } }</pre>
+    <pre style="padding: 0.5rem; background: white; width: fit-content;">mutation { cartTransformCreate(blockOnFailure: true, functionId: "019db248-1a05-722a-872d-a59476eb0ca9") { cartTransform { id functionId } userErrors { field message } } }</pre>
 </div>
 
 <ul style="margin-bottom: 0;">
