@@ -227,16 +227,10 @@ mutation {
     Type: Integer
     Description: Minimum cut length and width in mm for sheet/plate materials.
 </div>
-
 <div style="white-space: pre-line; padding-left: 5rem; padding-bottom: 0.25rem;">
     Name: Max cut sheet size
     Type: Integer
     Description: Maximum cut length and width in mm for sheet/plate materials.
-</div>
-<div style="white-space: pre-line; padding-left: 5rem; padding-bottom: 0.25rem;">
-    Name: Weight Rounding To Nearest Grams Value
-    Type: Weight
-    Description: Nearest weight to round material weights to, eg: 500g.
 </div>
 <div style="white-space: pre-line; padding-left: 5rem; padding-bottom: 0.25rem;">
     Name: Cut Allowance (cm)
@@ -253,6 +247,11 @@ mutation {
     Type: Decimal
     Description: Material Density for use in sheet/plate material weight calculation. In grams per
     cubic centimeter.
+</div>
+<div style="white-space: pre-line; padding-left: 5rem; padding-bottom: 0.25rem;">
+    Name: Weight Rounding
+    Type: JSON
+    Description: Nearest weight to round material weights to, eg: 500g, and product ID used during shipping weight calculation.
 </div>
 
 <h3>Add required variant meta fields:</h3>
@@ -302,10 +301,10 @@ mutation {
     </li>
     <li>min cut sheet size: 50</li>
     <li>max cut sheet size: 1000</li>
-    <li>weight rounding to nearest grams value: 500</li>
     <li>cut allowance (cm): 2.0</li>
     <li>price per kg: 12.00</li>
     <li>material density (g/cm³): 2.7</li>
+    <li>weight rounding: {"value_grams":500,"weight_product_variant_id":49215967265012}</li>
     <li>Click save</li>
     <li>Update each of the variants, click on each in turn and add the following:
         <ul>
