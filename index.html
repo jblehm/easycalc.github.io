@@ -334,13 +334,20 @@ mutation {
     <li>Click save</li>
     <li>Once the "Calculated Shipping Weight" Product has been created, follow these steps to obtain it's Variant ID:
         <ul>
+            <li>Shopify creates a single default "variant" even on products with no explicit variants, unfortunately, the ID of which is required</li>
             <li>Go to the "Calculated Shipping Weight" Product page</li>
             <li>Add ".json" to the page URL, it should look like this "https://admin.shopify.com/store/STORENAME/products/1234567890.json"</li>
             <li>Press Return/Enter to navigate to that URL</li>
-            <li>You should be shown JSON of raw data, find the word "variants", get the first (and only) "id" value following</li>
+            <li>You should be shown JSON of raw data, find the word "variants"</li>
             <li>It should look like this:
                 <ul>
                     <li>...,"variants":[{"id":49215967265012,...</li>
+                </ul>
+            </li>
+            <li>Carefully copy the subsequent "id" value </li>            
+            <li>It should look like this:
+                <ul>
+                    <li>49215967265012</li>
                 </ul>
             </li>
         </ul>
